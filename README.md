@@ -77,6 +77,59 @@ An interactive script to simplify managing multiple kernels on Arch Linux, inclu
 sudo ./arch-kernel-manager.sh
 ```
 
+### 6. `pacman-forensics.sh` - The Package Archaeologist
+
+An advanced tool to investigate package history, dependencies, and file ownership on an Arch Linux system.
+
+**Usage:**
+```bash
+./pacman-forensics.sh <command> [argument]
+```
+
+### 7. `dotfile-manager.sh` - The Configuration Butler
+
+A powerful script to manage your personal configuration files (dotfiles) by symlinking them from a central, version-controlled directory.
+
+**Usage:**
+```bash
+./dotfile-manager.sh <command>
+```
+
+### 8. `aur-builder.sh` - The Safe AUR Assistant
+
+A script that assists in the manual building of AUR packages by following the Arch Way. It automates the tedious steps but leaves the crucial inspection and confirmation steps to the user.
+
+**Dependencies:**
+- `git`
+- `base-devel` group
+
+**Usage:**
+```bash
+./aur-builder.sh <package_name>
+```
+
+### 9. `boot-analyzer.sh` - The Boot Time Doctor
+
+A script that provides a user-friendly and actionable report on system boot performance using the power of `systemd-analyze`.
+
+**Usage:**
+```bash
+./boot-analyzer.sh
+```
+
+### 10. `btrfs-snapshot-manager.sh` - The Btrfs Time Machine
+
+A powerful, interactive script for managing Btrfs snapshots, making it easy to create, delete, and list system snapshots.
+
+**Dependencies:**
+- `btrfs-progs`
+- A Btrfs filesystem mounted at /.
+
+**Usage:**
+```bash
+sudo ./btrfs-snapshot-manager.sh <command>
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
