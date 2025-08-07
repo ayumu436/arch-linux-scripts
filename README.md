@@ -1,135 +1,132 @@
-# Arch Linux Power Scripts
+# Arch Linux Power User Scripts Collection
 
-A collection of powerful, innovative, and revolutionary bash scripts designed to automate complex tasks, enhance security, and improve the overall user experience on Arch Linux.
+A comprehensive collection of advanced Bash scripts designed specifically for Arch Linux users. These scripts automate common system administration tasks, optimize performance, and enhance the overall Arch Linux experience.
 
-## Getting Started
+## 🚀 Featured Scripts
 
-To use these scripts, first make them executable:
+### System Management & Optimization
 
-```bash
-chmod +x *.sh
-```
+#### 📦 **pacman-mirror-optimizer.sh**
+Automatically test, rank, and optimize Pacman mirrors for faster package downloads.
+- **Features:**
+  - Auto-detects your country for optimal mirror selection
+  - Tests mirror speeds and ranks them by performance
+  - Creates automatic backups before changes
+  - Supports both reflector and manual testing methods
+  - Interactive and command-line modes
+- **Usage:** `./pacman-mirror-optimizer.sh [--optimize|--benchmark|--restore|--country CODE]`
 
-## Scripts
+#### ⚙️ **arch-service-manager.sh**
+Advanced systemd service management with enhanced monitoring and control.
+- **Features:**
+  - Visual service status overview with color coding
+  - Real-time service monitoring
+  - Boot time analysis and optimization
+  - Service template generator
+  - Failed service detection and troubleshooting
+- **Usage:** `./arch-service-manager.sh [list|failed|details SERVICE|monitor|boot]`
 
-This collection includes the following scripts:
+#### 🧹 **arch-cache-cleaner.sh**
+Intelligent package cache management to free up disk space.
+- **Features:**
+  - Analyzes cache usage across pacman, AUR helpers, and user caches
+  - Smart cleaning with configurable retention policies
+  - Dry-run mode to preview changes
+  - Automatic orphan package detection
+  - Scheduled cleaning via systemd timers
+- **Usage:** `./arch-cache-cleaner.sh [--analyze|--clean|--aggressive|--dry-run]`
 
-### 1. `arch-update.sh` - The Intelligent System Updater
+#### 🎮 **arch-gpu-switcher.sh**
+Manage hybrid graphics systems (Intel/NVIDIA/AMD) for laptops.
+- **Features:**
+  - Switch between integrated and discrete GPUs
+  - PRIME render offload configuration
+  - Power management optimization
+  - GPU benchmarking tools
+  - Optimus Manager integration
+- **Usage:** `./arch-gpu-switcher.sh [intel|nvidia|hybrid|status|benchmark]`
 
-This script revolutionizes the update process by automating mirror list refreshing, checking for Arch News, handling `.pacnew` files, cleaning the system, and updating AUR packages.
+#### 🔋 **arch-power-optimizer.sh**
+Comprehensive battery and power management optimization.
+- **Features:**
+  - Multiple power profiles (powersave/balanced/performance)
+  - Real-time power consumption monitoring
+  - TLP and PowerTOP integration
+  - Service optimization for battery life
+  - Custom profile creation
+- **Usage:** `./arch-power-optimizer.sh [status|profile NAME|monitor|optimize]`
 
-**Dependencies:**
-- `pacman-contrib`
-- `reflector`
-- An AUR helper (e.g., `yay`, `paru`) is recommended.
+### Previously Added Scripts
 
-**Usage:**
-```bash
-sudo ./arch-update.sh
-```
+#### 🏥 **arch-doctor.sh**
+System health checker and diagnostic tool that identifies and fixes common Arch Linux issues.
 
-### 2. `arch-harden.sh` - Security Hardening Assistant
+#### 🔒 **arch-harden.sh**
+Security hardening script that implements best practices for system security.
 
-A one-stop tool for applying security best practices to your Arch Linux system. It checks the kernel, filesystem, network, and system configurations.
+#### 🐧 **arch-kernel-manager.sh**
+Kernel management utility for installing, configuring, and switching between different kernels.
 
-**Dependencies:**
-- `audit`
-- `fail2ban`
+#### 📸 **arch-snapshot.sh**
+System snapshot tool for creating and managing backups before major updates.
 
-**Usage:**
-```bash
-sudo ./arch-harden.sh
-```
+#### 🔄 **arch-update.sh**
+Intelligent system updater with automatic snapshot creation and rollback capabilities.
 
-### 3. `arch-snapshot.sh` - Pre-Change System Snapshot
+#### 🏗️ **aur-builder.sh**
+AUR helper wrapper that simplifies building and managing AUR packages.
 
-A safety tool that captures the current state of the system before you make potentially risky changes. It backs up package lists, systemd services, hardware configuration, and the pacman database.
+#### 🥾 **boot-analyzer.sh**
+Boot performance analyzer that identifies slow services and optimizes startup time.
 
-**Dependencies:**
-- An AUR helper (e.g., `yay`, `paru`) is recommended for a complete package list.
+#### 🗂️ **btrfs-snapshot-manager.sh**
+Advanced Btrfs snapshot management with automatic cleanup and rollback features.
 
-**Usage:**
-```bash
-./arch-snapshot.sh
-```
+#### 📝 **dotfile-manager.sh**
+Dotfile synchronization and management across multiple machines.
 
-### 4. `arch-doctor.sh` - System Health and Diagnostics
+#### 🔍 **pacman-forensics.sh**
+Package history analyzer for tracking system changes and dependencies.
 
-A comprehensive diagnostic tool that checks for common problems on an Arch Linux system, including failed services, journal errors, disk space, broken symlinks, and package integrity.
+#### 🖼️ **screenshot_organizer.sh**
+Automatically organizes screenshots into dated folders with metadata preservation.
 
-**Dependencies:**
-- None
+## 🚀 Quick Start
 
-**Usage:**
-```bash
-sudo ./arch-doctor.sh
-```
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/arch-scripts.git
+   cd arch-scripts
+   ```
 
-### 5. `arch-kernel-manager.sh` - Kernel Management Utility
+2. Make scripts executable:
+   ```bash
+   chmod +x *.sh
+   ```
 
-An interactive script to simplify managing multiple kernels on Arch Linux, including installing, removing, and listing them, with automatic bootloader updates.
+3. Run any script with `--help` for usage information:
+   ```bash
+   ./script-name.sh --help
+   ```
 
-**Dependencies:**
-- A supported bootloader (GRUB or systemd-boot) must be properly configured.
+## 📋 Requirements
 
-**Usage:**
-```bash
-sudo ./arch-kernel-manager.sh
-```
+- Arch Linux (or Arch-based distribution)
+- Bash 4.0+
+- sudo privileges for system modifications
+- Optional: yay or paru for AUR support
 
-### 6. `pacman-forensics.sh` - The Package Archaeologist
+## ⚠️ Important Notes
 
-An advanced tool to investigate package history, dependencies, and file ownership on an Arch Linux system.
+- Always review scripts before running them with sudo privileges
+- Most scripts create backups before making system changes
+- Use dry-run modes when available to preview changes
+- Some scripts may require additional packages (will prompt for installation)
 
-**Usage:**
-```bash
-./pacman-forensics.sh <command> [argument]
-```
+## 🤝 Contributing
 
-### 7. `dotfile-manager.sh` - The Configuration Butler
+Feel free to submit issues, fork the repository, and create pull requests for any improvements.
 
-A powerful script to manage your personal configuration files (dotfiles) by symlinking them from a central, version-controlled directory.
+## 📄 License
 
-**Usage:**
-```bash
-./dotfile-manager.sh <command>
-```
-
-### 8. `aur-builder.sh` - The Safe AUR Assistant
-
-A script that assists in the manual building of AUR packages by following the Arch Way. It automates the tedious steps but leaves the crucial inspection and confirmation steps to the user.
-
-**Dependencies:**
-- `git`
-- `base-devel` group
-
-**Usage:**
-```bash
-./aur-builder.sh <package_name>
-```
-
-### 9. `boot-analyzer.sh` - The Boot Time Doctor
-
-A script that provides a user-friendly and actionable report on system boot performance using the power of `systemd-analyze`.
-
-**Usage:**
-```bash
-./boot-analyzer.sh
-```
-
-### 10. `btrfs-snapshot-manager.sh` - The Btrfs Time Machine
-
-A powerful, interactive script for managing Btrfs snapshots, making it easy to create, delete, and list system snapshots.
-
-**Dependencies:**
-- `btrfs-progs`
-- A Btrfs filesystem mounted at /.
-
-**Usage:**
-```bash
-sudo ./btrfs-snapshot-manager.sh <command>
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+These scripts are provided as-is for the Arch Linux community. Use at your own risk.

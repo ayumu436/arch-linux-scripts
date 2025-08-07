@@ -141,7 +141,7 @@ remove_kernel() {
     if [[ ${#kernels_to_remove[@]} -eq 0 ]]; then
         warn "No other kernels available to remove. You cannot remove the running kernel."
         return
-    }
+    fi
 
     PS3="Select a kernel to REMOVE (cannot remove running kernel): "
     select kernel_to_remove in "${kernels_to_remove[@]}" "Cancel"; do
